@@ -1,7 +1,11 @@
 function solution(numbers) {
-//     numbers.sort((a,b)=>a-b)
+    // var answer = numbers.sort((a,b)=>a-b).reduce((a,b)=>(a*b),1)
+    numbers.sort((a,b)=>a-b)
 //     var answer = numbers.reduce((a,b)=>(a*b),1);
     // var answer = numbers[numbers.length - 1] * numbers[numbers.length - 2];
+    var answer = Math.max(numbers[0]*numbers[1], numbers[numbers.length-1]*numbers[numbers.length-2]);
+
+
 
     // return answer;
 // var maxProduct = -Infinity;
@@ -17,6 +21,6 @@ function solution(numbers) {
 //     }
 
     // return maxProduct;
-    var answer = Math.max(...numbers.map((v,idx) =>  Math.max(...numbers.filter((dv, dIdx) => dIdx != idx).map(s => s * v) ) )) ;
+    // var answer = [...numbers].map((v,idx) =>  Math.max(...numbers.filter((dv, dIdx) => dIdx != idx).map(s => s * v) ) ) ;
     return answer
 }
