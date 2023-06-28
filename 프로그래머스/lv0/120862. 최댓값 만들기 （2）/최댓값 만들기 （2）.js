@@ -19,6 +19,7 @@ function solution(numbers) {
 
     // return maxProduct;
     // var answer = [...numbers].map((v,idx) =>  Math.max(...numbers.filter((dv, dIdx) => dIdx != idx).map(s => s * v) ) ) ;
-    var answer = Math.max(...numbers.map((num, idx) => Math.max(...numbers.slice(idx+1).map(num2 => num * num2))));
+    // var answer = Math.max(...numbers.map((num, idx) => Math.max(...numbers.slice(idx+1).map(num2 => num * num2))));
+    var answer = Math.max(...numbers.map((a,i)=>numbers.map((b,j)=>i!=j?a*b:-1/0)).flat()) 
     return answer
 }
