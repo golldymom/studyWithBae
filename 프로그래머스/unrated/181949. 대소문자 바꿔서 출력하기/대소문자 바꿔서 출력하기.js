@@ -13,14 +13,15 @@ rl.on('line', function (line) {
     let gob = /[a-z]/;
     let gos = /[A-z]/;
     // let answer = [...str].filter((a,i) => gob[i])
-     let answer = [...str].map((char) => {
-    if (char >= 'a' && char <= 'z') {
-      return char.toUpperCase();
-    } else if (char >= 'A' && char <= 'Z') {
-      return char.toLowerCase();
-    } else {
-      return char;
-    }
-  }).join('');
+  //    let answer = [...str].map((char) => {
+  //   if (char >= 'a' && char <= 'z') {
+  //     return char.toUpperCase();
+  //   } else if (char >= 'A' && char <= 'Z') {
+  //     return char.toLowerCase();
+  //   } else {
+  //     return char;
+  //   }
+  // }).join('');
+    let answer = [...str].map((char)=>gob.test(char)? char.toUpperCase():char.toLowerCase()).join('')
     console.log(answer)    
 });
